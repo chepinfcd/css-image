@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>开关</title>
+	<style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+        }
+
+        input[type='checkbox'] {
+            display: none;
+        }
+
+        label {
+            display: block;
+            position: relative;
+            height: 30px;
+            width: 60px;
+            background: #777;
+            border-radius: 20px;
+            border: 2px solid #555;
+        }
+
+        label::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            background: #555;
+            border-radius: 20px;
+            top: 3px;
+			transition: all linear .3s;
+        }
+
+        input[type='checkbox']:checked ~ label {
+            background: #00a0fc;
+			border-color: #006dc9;
+        }
+        input[type='checkbox']:checked ~ label::after{
+            background: #0054b0;
+			transform: translateX(35px);
+		}
+	</style>
+</head>
+<body>
+<input type='checkbox' id="toggle"/>
+<label for="toggle"></label>
+
+</body>
+</html>

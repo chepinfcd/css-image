@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>悬浮输入框</title>
+	<style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input {
+            position: absolute;
+            height: 30px;
+            width: 200px;
+            border-bottom: 1px solid black;
+        }
+
+        span {
+            height: 2px;
+            width: 0;
+            background: purple;
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .input1 {
+            position: absolute;
+            height: 30px;
+            width: 200px;
+            padding: 0;
+            border: 0;
+            outline: none;
+        }
+
+        .label1 {
+            position: absolute;
+            top: 25%;
+            transition: all linear .3s;
+        }
+
+        input[type='text']:focus ~ label,
+        input[type='text']:valid ~ label {
+            top: -30px;
+			color: purple;
+        }
+
+        input[type='text']:focus ~ span,
+        input[type='text']:valid ~ span {
+            width: 100%;
+            transition: all linear .3s;
+        }
+
+	</style>
+</head>
+<body>
+
+<div class="input">
+	<input type="text" id="password" required class="input1"/>
+	<label for="password" class="label1">User Name</label>
+	<span></span>
+</div>
+
+</body>
+</html>

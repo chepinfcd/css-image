@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">1
+	<title>流动边框盒子</title>
+	<style>
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box1 {
+            height: 250px;
+            width: 180px;
+            position: relative;
+            background: rgba(0, 0, 0, .8);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0;
+			overflow: hidden;
+        }
+
+        span {
+            color: white;
+            font-size: 60px;
+            text-shadow: 2px 2px pink;
+            z-index: 1;
+        }
+
+        .box1::before {
+            content: '';
+			position: absolute;
+            width: 120px;
+            height: 120%;
+			background: linear-gradient(#00ccff,#d500f9);
+            animation: rotate linear infinite 4s;
+        }
+
+        .box1::after {
+            content: '';
+            position: absolute;
+			background: #0e1538;
+			inset: 5px;
+			border-radius: 20px;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+	</style>
+</head>
+<body>
+<div class="box1">
+<span>
+	css
+</span>
+</div>
+</body>
+</html>

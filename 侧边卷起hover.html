@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>侧边卷起</title>
+	<style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+		.hover{
+            height: 30px;
+            width: 100px;
+            background: #555;
+			position: relative;
+			overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+		}
+
+		span{
+			position: absolute;
+            transition: all linear .5s;
+			z-index: 1;
+		}
+
+		.hover::before{
+			content: '';
+			display: block;
+			position: absolute;
+			top: -20px;
+			left: -20px;
+            height: 200%;
+            width: 0;
+            background: purple;
+			transform: skewX(-60deg);
+			transition: all linear .5s;
+		}
+
+		.hover:hover::before{
+            width: 200%;
+		}
+        .hover:hover span{
+			color: white;
+		}
+	</style>
+</head>
+<body>
+<div class="hover">
+	<span>侧边卷起</span>
+</div>
+</body>
+</html>
